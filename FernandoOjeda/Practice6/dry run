@@ -1,0 +1,42 @@
+Windows PowerShell
+Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+
+PS C:\Users\Administrator\RubymineProjects\test\AT03_API_test\FernandoOjeda\Practice6\features>
+PS C:\Users\Administrator\RubymineProjects\test\AT03_API_test\FernandoOjeda\Practice6\features> cucumber tes
+ry-run
+*** WARNING: You must use ANSICON 1.31 or higher (https://github.com/adoxa/ansicon/) to get coloured output
+Feature: Feeding a cow
+
+  Scenario Outline: feeding a suckler cow      # test.feature:3
+    Given the cow weighs <weight> kg           # test.feature:4
+    When we calculate the feeding requirements # test.feature:5
+    Then the energy should be <energy> MJ      # test.feature:6
+    And the protein should be <protein> kg     # test.feature:7
+
+    Examples:
+      | weight | energy | protein |
+      | 450    | 26500  | 215     |
+      | 500    | 29500  | 245     |
+      | 575    | 31500  | 255     |
+      | 600    | 37000  | 305     |
+
+4 scenarios (4 undefined)
+16 steps (16 undefined)
+
+You can implement step definitions for undefined steps with these snippets:
+
+Given(/^the cow weighs (\d+) kg$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^we calculate the feeding requirements$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^the energy should be (\d+) MJ$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^the protein should be (\d+) kg$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end

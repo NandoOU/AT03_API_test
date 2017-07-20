@@ -1,0 +1,113 @@
+
+1. when and why BDD was defined?
+
+Behavior Driven Development (BDD) is a synthesis and refinement of practices stemming
+from Test Driven Development (TDD) and Acceptance Test Driven Development (ATDD)
+One of the problems that we find when developing software is that the client / business analyst .
+speaks one language and the other developers, more stuck to the technology and the solutions .
+that are going to be applied. Its main characteristics are:
+•	Serves as bridge of communication between the client / business analyst and the developer.
+•	It allows to use a common language between the developers and the clients.
+•	It has an outward-inward approach, that is, it is part of the criteria of acceptance towards the implementation.
+•	A ubiquitous language is used.
+
+
+2. The most important aspects of BDD
+
+Teams already using TDD or ATDD may want to consider BDD for several reasons:
+•	BDD offers more precise guidance on organizing the conversation between developers,
+testers and domain experts.
+•	Notations originating in the BDD approach, in particular the given-when-then canvas,
+are closer to everyday language and have a shallower learning curve compared to those
+of tools such as Fit/FitNesse.
+•	Tools targeting a BDD approach generally afford the automatic generation of technical
+and end user documentation from BDD "specifications"
+
+
+3. Why is useful and when could be applied.
+
+BDD is useful because we can have the documentation in sync with the code,
+in addition the specificity of the tests are written in a friendly way for
+the business since BDD is a bridge between business languages (User Stories)
+and the automated tests (Unit test) .
+
+BDD would apply the moment you do the automated testing, it should be run as
+proof in the Continuous Integration (Jenkins) construction. Where the specification
+should be written friendly to the business.
+
+
+4. Which type of teams could implement BDD
+
+Developers, testers and domain experts.
+
+
+5. Structure of a feature – Give an example
+
+•	Structure
+–	  Name
+–	  Size [Optional]
+–	  Priority
+•	Example
+
+                Feature: Create Story
+
+  	  Background:
+        When I request "POST" "/projects" with:
+         | name | GUI Project |
+        And I stored as [Project1]
+
+       @login @goToDashboard @deleteProject
+       Scenario: Verify if a Story can be create
+       When Open a project created as "GUI Project"
+       And I insert the datas for the Story
+           | NAME        | Gui          |
+           | STORY_TYPE  | Feature      |
+           | POINTS      | 1 Point      |
+           | BLOCKERS    | blockersOne  |
+           | DESCRIPTION | RequestSteps |
+           | LABEL       | Hello        |
+       Then Verify if the story was created with the name "Gui"
+
+
+
+
+6. Structure of a user story – Give an example
+
+•	Structure
+–	  Title (one line describing the story)
+–	  Narrative:
+•	      As a [role]
+•	      I want [feature]
+•	      So that [benefit]
+•	Example
+
+              Feature: Create Story
+                 Story: Create a new Story
+                 In order to create a new story
+                 As a Scrum Master
+                 I want to be able to create a new story for the project
+
+
+
+7. Structure of a scenario – Give an example
+
+Structure:
+•	Given some initial context (the givens)
+•	When an event occurs
+•	then ensure some outcomes
+
+Example
+
+Scenario: Verify if we can delete a Story created
+    When Open a project created as "GUI Project"
+    And I search a Story with the name "GUI Story" to delete it
+    And I delete a story
+    Then The message should be "1 story deleted"
+
+
+7. Differences between BDD and BDT
+BDD
+BDD is a bridge between business language (User Stories) and automatic tests (JUnit). In order to keep the documentation in sync with the code – we need to run it as test in Continuous Integration build (Jenkins, Bamboo). Test specification should be written in business friendly form.
+BDT
+The goal of BDT is a business readable and domain specific language that allows you to describe a system’s behavior without detailing how that behavior is implemented.
+In BDT, Tests in the form of plain text features descriptions with scenarios are typically written before anything else and verified by the non-technical stakeholders.
