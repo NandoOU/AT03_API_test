@@ -6,7 +6,7 @@ Feature: Test Google main page
   Scenario Outline: Verify if we can search an information
     When I insert <data> in the text field search
     And I press "Enter"
-    Then The information will be display
+    Then The information was displayed successful
 
   Examples:
   |    data          |

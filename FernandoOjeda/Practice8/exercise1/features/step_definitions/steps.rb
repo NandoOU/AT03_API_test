@@ -6,8 +6,8 @@ And(/^I press "([^"]*)"$/) do |arg|
   puts "When I press #{arg} the information will be display"
 end
 
-Then(/^The information will be display$/) do
-  puts "The information will be display"
+Then(/^The information was displayed successful$/) do
+  puts "The information was displayed successful"
 end
 
 And(/^I click on the button "([^"]*)"$/) do |arg|
