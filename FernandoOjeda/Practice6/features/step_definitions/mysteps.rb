@@ -14,3 +14,4 @@ end
 And(/^the protein should be (.*) kg$/) do |protein|
   puts "The protein should be: #{protein}"
 end
+
