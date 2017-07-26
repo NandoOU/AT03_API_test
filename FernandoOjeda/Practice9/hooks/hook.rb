@@ -1,4 +1,3 @@
-class Hook
 
   Before('@scenario_outline') do
     puts "I am running an outline scenario"
@@ -12,4 +11,3 @@ class Hook
   After('@scenario_normal_after') do
     puts "I finished running a normal scenario"
   end
-end
